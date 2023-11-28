@@ -8,50 +8,48 @@ const btnShakeIt = document.querySelector("#btn-shake-it");
 const readingsP = document.querySelector("#readings");
 
 
-
 //brings data from 3rd party api, injects into tbox
 function api()  {
 
-fetch('https://yesno.wtf/api')
-.then((data)=>{
-    return data.json();
-})
-.then((completedata)=>{
-    console.log(completedata.answer);
-    //document.getElementById('tbox').innerHTML = completedata.answer;
-})
-.catch((err)=>{
-    console.log('FAILURE');
-})
-
-}
-
-//innate responses 
-let fortunes = ['it is certain', 'ask again later', 'very doubtful', 'outlook good','better not tell you now','it is decidedly so','concentrate and ask again', api()];
-
-function randomize() {
-
-   let injectRandom = fortunes[Math.floor(Math.random() *fortunes.length)];
-   console.log(injectRandom);
-   tbox.innerHTML+= injectRandom;
-};
-
-
-
-function eraseRandom() {
-
-    tbox.innerHTML='';
-
-};
-
-
-/*btnShakeIt.addEventListener("click", () => {
-        const injectRandom = document.createElement('p');
-        injectRandom.innerText = ;
-        readingsP.appendChild(readings());
+    fetch('https://yesno.wtf/api')
+    .then((data)=>{
+        return data.json();
+    })
+    .then((completedata)=>{
+        console.log(completedata.answer);
+        //document.getElementById('tbox').innerHTML = completedata.answer;
+    })
+    .catch((err)=>{
+        console.log('FAILURE');
+    })
     
-});*/
-
+    }
+    
+    //innate responses 
+    let fortunes = ['it is certain', 'ask again later', 'very doubtful', 'outlook good','better not tell you now','it is decidedly so','concentrate and ask again', api()];
+    
+    function randomize() {
+    
+       let injectRandom = fortunes[Math.floor(Math.random() *fortunes.length)];
+       console.log(injectRandom);
+       tbox.innerHTML+= injectRandom;
+    };
+    
+    
+    function eraseRandom() {
+    
+        tbox.innerHTML='';
+    
+    };
+    
+    /*btnShakeIt.addEventListener("click", () => {
+            const injectRandom = document.createElement('p');
+            injectRandom.innerText = ;
+            readingsP.appendChild(readings());
+        
+    });*/
+    
+    
 
 
 //Shake it button starts animation
@@ -63,7 +61,7 @@ btnShakeIt.addEventListener("click", () => {
     triangle.classList.add("fade");
     tbox.classList.add("shakeit");
     tbox.classList.add("fade"); 
-    randomize();
+    
 
 });
 
