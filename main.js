@@ -26,21 +26,21 @@ function api()  {
     }
     
     //innate responses 
-    let fortunes = ['it is certain', 'ask again later', 'very doubtful', 'outlook good','better not tell you now','it is decidedly so','concentrate and ask again', api()];
+    let fortunes = ['it is certain', 'ask again later', 'very doubtful', 'outlook good','better not tell you now','it is decidedly so','concentrate and ask again', /*api()*/];
     
     function randomize() {
     
-       let injectRandom = fortunes[Math.floor(Math.random() *fortunes.length)];
-       console.log(injectRandom);
-       tbox.innerHTML+= injectRandom;
+       let injectRandom = Math.floor(Math.random() * (fortunes.length));
+       document.getElementById('tbox').innerHTML= fortunes[injectRandom];
     };
     
-    
-    function eraseRandom() {
-    
-        tbox.innerHTML='';
-    
+    function clearInput() {
+
+        let inputBox = document.getElementById('input');
+        input.value = "";
     };
+    
+
     
     /*btnShakeIt.addEventListener("click", () => {
             const injectRandom = document.createElement('p');
@@ -50,7 +50,10 @@ function api()  {
     });*/
     
     
-
+/*document.getElementById('btn-shake-it').onclick = function replace() {
+    tbox.innerHTML-= randomize();
+    tbox.innerHTML+= randomize();
+};*/
 
 //Shake it button starts animation
 btnShakeIt.addEventListener("click", () => {
@@ -61,7 +64,7 @@ btnShakeIt.addEventListener("click", () => {
     triangle.classList.add("fade");
     tbox.classList.add("shakeit");
     tbox.classList.add("fade"); 
-    
+    randomize();
 
 });
 
