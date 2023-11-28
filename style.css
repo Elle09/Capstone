@@ -1,0 +1,124 @@
+
+body {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    max-height: 100%;
+    background-color:#45454a;
+}
+
+.container {
+
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+    width: 1000px;
+    height: 500px;
+    border-radius: 50%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+}
+.circle {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(#0a0a0b 10%,
+    #161618 20%,
+    #363637 45%,
+    #060607 100%);
+    border-radius: 50%;
+    grid-area: 1 / 1;
+    z-index: -2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.circle::before {
+  content: "";
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(#0b0b0c 60%,
+  #18181b 80%,
+  #1c1c1f 100%);
+  border-radius: 80%;
+  filter: blur(40px);
+  grid-area: 1 / 1;
+}
+.circle::after {
+  content: "";
+  width: 70%;
+  height: 90px;
+  background: rgba(0, 0, 0, 0.415);
+  border-radius: 50%;
+  bottom: -80%;
+  filter: blur(2000px);
+  grid-area: 1 / 1;
+}
+
+.small-circle {
+    width: 150px;
+    height: 150px;
+    background: rgb(4, 12, 49);
+    border-radius: 50%;
+    grid-area: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.medium-circle {
+  width: 155px;
+  height: 155px;
+  background: rgb(242, 243, 245);
+  border-radius: 50%;
+  grid-area: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.triangle {
+  margin-top: 38px;
+  height: 0;
+  width: 0;
+  border-top: 80px solid #1b35b2;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  grid-area: 1 / 1;
+  scale: 125%;
+  
+}
+
+
+
+.triangle:before {
+  content:"";
+  position: absolute;
+  top:-70px;
+  right: 15px;
+  height:0;
+  width: 100%;
+}
+
+.tbox {
+  align-items: center;
+  width: 70px;
+  height: 55px;
+  margin-top: 15px;
+  padding-bottom: 10px;
+  z-index: 1;
+  grid-area: 1 / 1;
+  color:aliceblue;
+  font-size:small;
+  text-align: center;
+
+}
+
+
+
+
+  
