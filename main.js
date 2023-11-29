@@ -12,48 +12,38 @@ const readingsP = document.querySelector("#readings");
 function api()  {
 
     fetch('https://yesno.wtf/api')
-    .then((data)=>{
+    .then((data) => {
         return data.json();
     })
-    .then((completedata)=>{
+    .then((completedata) => {
         console.log(completedata.answer);
         //document.getElementById('tbox').innerHTML = completedata.answer;
     })
-    .catch((err)=>{
+    .catch((err) => {
         console.log('FAILURE');
     })
     
     }
     
-    //innate responses 
-    let fortunes = ['it is certain', 'ask again later', 'very doubtful', 'outlook good','better not tell you now','it is decidedly so','concentrate and ask again', /*api()*/];
+    //innate responses random injection of elements
+    let fortunes = ['it is certain', 'ask again later', 'very doubtful', 'outlook good','better not tell you now','it is decidedly so','concentrate and ask again', api()];
     
     function randomize() {
     
        let injectRandom = Math.floor(Math.random() * (fortunes.length));
        document.getElementById('tbox').innerHTML= fortunes[injectRandom];
     };
-    
-    function clearInput() {
 
-        let inputBox = document.getElementById('input');
+//DOESNT WORK
+//setTimeout(randomize, 5000);
+    
+//clears input after user submits text
+    function clearInput() {
+        document.getElementById('input');
         input.value = "";
     };
     
-
-    
-    /*btnShakeIt.addEventListener("click", () => {
-            const injectRandom = document.createElement('p');
-            injectRandom.innerText = ;
-            readingsP.appendChild(readings());
-        
-    });*/
-    
-    
-/*document.getElementById('btn-shake-it').onclick = function replace() {
-    tbox.innerHTML-= randomize();
-    tbox.innerHTML+= randomize();
-};*/
+  
 
 //Shake it button starts animation
 btnShakeIt.addEventListener("click", () => {
@@ -64,7 +54,7 @@ btnShakeIt.addEventListener("click", () => {
     triangle.classList.add("fade");
     tbox.classList.add("shakeit");
     tbox.classList.add("fade"); 
-    randomize();
+  
 
 });
 
