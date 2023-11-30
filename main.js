@@ -50,24 +50,38 @@ tbox.addEventListener("animationend", () => {
   tbox.classList.remove("fade");
 });
 
-//regex input v
+//regex input 
+const regex = /^(who|am|what|when|where|will|how|if|would|when|does|why|whose|whom|which|could|should|can|does|don't|dont|won't|wont|couldn't|couldnt|shouldn't|shouldnt|can't|cant)+( [\w]+)*(\?+$)/i;
 
 
+//checks conditions of input/starts aninmation
 btnShakeIt.addEventListener('click', (e) => {
-
-    checkInput();
+    
+  checkInput();
 });
+
+/*input.addEventListener('keyup', (e) => {
+    e.preventDefault();
+    if (e.key === 'Enter') {
+      checkInput();
+      btnShakeIt.click();
+    }
+    
+});*/
 
 function checkInput() {
   //checks char in input field
   const inputValue = input.value.trim();
 
-if(inputValue === '') {
+if(inputValue ==='') {
   //show error
   //add error class
   setErrorFor(input, 'you must ask a question to receive a reading');
-  document.getElementById('tbox').innerHTML = "";
-} else {
+} 
+  else if (!isQuestion(inputValue)) {
+  setErrorFor(input, 'you must ask in the form of a question');
+} 
+  else {
   setTimeout(getFromEightBallApi,2500);
   clearInput();
   setSuccessfor(input);
@@ -98,3 +112,13 @@ function setSuccessfor(input) {
   // adds success class
   inputControl.className = 'input-control success';
 }
+
+function isQuestion (input) {
+  //applies regex to input
+  return regex.test(input);
+}
+
+console.log(isQuestion());
+
+
+
