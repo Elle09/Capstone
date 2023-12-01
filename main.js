@@ -54,20 +54,21 @@ tbox.addEventListener("animationend", () => {
 const regex = /^(who|am|what|when|where|will|how|if|would|when|does|why|whose|whom|which|could|should|can|does|don't|dont|won't|wont|couldn't|couldnt|shouldn't|shouldnt|can't|cant)+( [\w]+)*(\?+$)/i;
 
 
-//checks conditions of input/starts aninmation
-btnShakeIt.addEventListener('click', (e) => {
-    
-  checkInput();
+//checks conditions of input/starts animation clicking button
+btnShakeIt.addEventListener('click', (e) => { 
+    checkInput();
 });
 
-/*input.addEventListener('keyup', (e) => {
-    e.preventDefault();
+// "" hitting enter key
+input.addEventListener('keyup', (e) => {
     if (e.key === 'Enter') {
       checkInput();
-      btnShakeIt.click();
-    }
+    }   
     
-});*/
+});
+
+
+
 
 function checkInput() {
   //checks char in input field
@@ -84,7 +85,7 @@ if(inputValue ==='') {
   else {
   setTimeout(getFromEightBallApi,2500);
   clearInput();
-  setSuccessfor(input);
+  setSuccessFor(input);
   //Shake it button starts animation
   circle.classList.add("shakeit");
   smCircle.classList.add("shakeit");
@@ -107,7 +108,7 @@ function setErrorFor(input, message) {
 }
 
 
-function setSuccessfor(input) {
+function setSuccessFor(input) {
   const small = inputControl.querySelector('small');
   // adds success class
   inputControl.className = 'input-control success';

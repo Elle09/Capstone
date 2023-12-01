@@ -15,7 +15,8 @@ const fortunes = [
   "better not tell you now",
   "it is decidedly so",
   "concentrate and ask again",
-  "no"
+  "no",
+  "why would you ask that?"
 ];
 
 app.get("/", (request, response) => {

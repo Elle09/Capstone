@@ -1,16 +1,6 @@
 
-body {
-    padding: 0;
-    margin: 0;
-    max-width: 100%;
-    max-height: 100%;
-    background-color:#404044;
-    background-image: url(/images/pooltablebackground2.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-}
+
+
 
 
 .container {
@@ -23,33 +13,22 @@ body {
   place-items: center;
 }
 
-.input-control {
-  grid-area: 3/2/3/2;
+.break {
   display: grid;
-  place-items: center;
+  width: 30em;
+  min-height: 200em;
+  background: rgb(2, 38, 2);
+  background: cover;
+  grid-area: 1 / 2;
+  z-index: -7;
 }
 
-.input {
-  width: 250px;
-  border: 1.5px solid #2d2c2c;
-}
-
-
-.btn-shake-it {
-  padding-top: 3px;
-  background-color: orange;
-  border: 2px solid #000000;
-  border-radius: 25%;
-  width: 40%;
-  font-weight: bolder;
-}
-
-
-/*magic 8 ball*/
+/*magic 8 ball duct tape*/
 
 .main {
     max-width: 100%;
     max-height: 100%;
+    padding-top: 1em;
     border-radius: 50%;
     grid-area: 2 / 2;
     display: grid;
@@ -70,19 +49,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+  
     
 }
 .circle::before {
   content: "";
   width: 400px;
   height: 300px;
-  background: linear-gradient(#333336 10%,
+  background: linear-gradient(#4a4a4e 10%,
   #18181a 30%,
   #020208 80%);
   border-radius: 50%;
   filter: blur(18px);
   grid-area: 1 / 1;
 }
+
 .circle::after {
   content: "";
   width: 15px;
@@ -90,7 +71,7 @@ body {
   background: rgba(0, 0, 0, 0.415);
   border-radius: 10%;
   bottom: 10%;
-  filter: blur(12px);
+  filter: blur(20px);
   grid-area: 1 / 1;
 }
 
@@ -156,9 +137,32 @@ body {
   z-index: 1;
   grid-area: 1 / 1;
   color:rgb(224, 226, 228);
-  font-size:small;
+  font-size: small;
   text-align: center;
 
+}
+
+.input-control {
+  grid-area: 3/2/3/2;
+  display: grid;
+  place-items: center;
+}
+
+.input {
+  width: 250px;
+  border: 1.5px solid #2d2c2c;
+  background-color: rgb(212, 231, 238);
+  text-align: center;
+}
+
+
+.btn-shake-it {
+  padding-top: 3px;
+  background-color: orange;
+  border: 2px solid #000000;
+  border-radius: 25%;
+  width: 40%;
+  font-weight: bolder;
 }
 
 
@@ -203,7 +207,7 @@ body {
   
   @keyframes shake {
     10%, 90% {
-      transform: translate3d(-3px, 0, 0);
+      transform: translate3d(-4px, 0, 0);
     }
     
     20%, 80% {
@@ -211,11 +215,11 @@ body {
     }
   
     30%, 50%, 70% {
-      transform: translate3d(-5px, 0, 0);
+      transform: translate3d(-4px, 0, 0);
     }
   
     40%, 60% {
-      transform: translate3d(5px, 0, 0);
+      transform: translate3d(4px, 0, 0);
     }
   }
 
@@ -228,7 +232,7 @@ body {
     }
     
     20%, 80% {
-      transform: translate3d(2px, 0, 0);
+      transform: translate3d(3px, 0, 0);
     }
   
     30%, 50%, 70% {
@@ -240,27 +244,30 @@ body {
     }
   }
 
-  @keyframes fadein {
-    0% {opacity: 0};
-    100% {opacity: 1};
-
-    10%, 90% {
-      transform: translate3d(-1px, 0, 0);
-    }
-    
-    20%, 80% {
-      transform: translate3d(2px, 0, 0);
-    }
   
-    30%, 50%, 70% {
-      transform: translate3d(-4px, 0, 0);
-    }
-  
-    40%, 60% {
-      transform: translate3d(4px, 0, 0);
-    }
-  }
+@media (min-width: 480px) {
+  body {
+    padding: 0;
+    margin: auto;
+    max-width: 100vh;
+    min-height: 100vh;
+    background: rgb(2, 38, 2);
+    background-size: cover;
+    align-items: center;
+}}
 
 
 
-  
+@media (min-width: 769px) { 
+  body {
+    padding: 0;
+    margin: auto;
+    max-width: 100vh;
+    min-height: 100vh;
+    background-image: url(/images/pooltablebackground2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+}
